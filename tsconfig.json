@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "lib": [
+      "es2015"
+    ]
+  },
+  "include": [ "./src/**/*.ts" ],
+  "exclude": [
+    "node_modules"
+  ]
+}

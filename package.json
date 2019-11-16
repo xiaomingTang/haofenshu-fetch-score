@@ -1,0 +1,37 @@
+{
+  "name": "haofenshu-fetch-score",
+  "description": "好分数 查分相关, 仅供学习交流使用, 下载后请于24小时内删除! 任何人不得用于商业及其他非法目的. 如有侵权, 请联系删除.",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "author": "1038761793@qq.com",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src --ext .js --ext .ts",
+    "lint:fix": "eslint --fix src --ext .js --ext .ts",
+    "build": "yarn run eslint && tsc",
+    "node": "node ./dist/index.js",
+    "dev": "nodemon ./src/index.ts",
+    "start": "yarn run dev",
+    "test": "mocha -r ts-node/register test/*.ts",
+    "tsnode": "ts-node ./src/index.ts"
+  },
+  "dependencies": {
+    "@types/superagent": "^4.1.4",
+    "superagent": "^5.1.0",
+    "tang-base-node-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.5",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "assert": "^2.0.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}

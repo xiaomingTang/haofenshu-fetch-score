@@ -1,0 +1,81 @@
+个人信息  https://hfs-be.yunxiao.com/v2/user-center/user-snapshot // 这里面的 v2 v3 不知道是什么意思, 等什么时候报错了, 链接换了再来修复吧
+  data === {
+    "studentId": "0000000000000000xxxxxxxx",
+    "xuehao": [
+      "2019xxxxx"
+    ],
+    "studentName": "xxx",
+    "grade": "高一",
+    "className": "5班",
+    "schoolName": "xxxxxx中学",
+    "schoolId": "0000000000000000000xxxxx",
+    "id": "0000000000000000xxxxxxxx"
+  }
+
+列出历次考试  https://hfs-be.yunxiao.com/v3/exam/list?start=-1   referer: https://hfs.yunxiao.com/index
+  data.list[0] === {
+    examId: xxxxxx,
+    time: 1650000000000,
+    name: "xxxxxx第一次月考",
+    className: "5班",
+    score: xxx,
+    manfen: xxx
+  }
+
+列出该次考试  https://hfs-be.yunxiao.com/v3/exam/${examId}/overview
+  data.papers[0] === {
+    fujiati: {},
+    manfen: 100,
+    name: "高一地理",
+    paperId: "xxxxxx-xxxxx",
+    score: 85,
+    subject: "地理"
+  }
+
+联考排名信息  https://hfs-be.yunxiao.com/v3/exam/${examId}/rank-info
+  "data": {
+    "highest": {
+      "class": xxx,
+      "grade": xxx,
+      "liankao": xxx,
+      "gradingGroupClass": xxx,
+      "gradingGroupGrade": xxx,
+      "gradingGroupLiankao": xxx
+    },
+    "avg": {
+      "class": xxx,
+      "grade": xxx,
+      "liankao": xxx,
+      "gradingGroupClass": xxx,
+      "gradingGroupGrade": xxx,
+      "gradingGroupLiankao": xxx
+    },
+    "rank": { // 非会员没有排名信息
+      "class": -1,
+      "grade": -1,
+      "liankao": -1,
+      "gradingGroupClass": -1,
+      "gradingGroupGrade": -1,
+      "gradingGroupLiankao": -1
+    },
+    "number": { // 人数
+      "class": xxx,
+      "grade": xxx,
+      "liankao": xxx,
+      "gradingGroupClass": xxx,
+      "gradingGroupGrade": xxx,
+      "gradingGroupLiankao": xxx
+    },
+    "defeatRatio": {
+      "class": -1,
+      "grade": -1,
+      "liankao": 94, // 非会员也能显示联考击败的比率, 可以依据这个猜测联考排名(一般小考试, 联考排名等同于年级排名), 94意思是你击败了94%的其他同学
+      "gradingGroupClass": -1,
+      "gradingGroupGrade": -1,
+      "gradingGroupLiankao": 94
+    },
+    "classRankType": 5,
+    "gradeRankType": 5
+  }
+
+联考单科排名信息  https://hfs-be.yunxiao.com/v3/exam/${examId}/papers/${paperId}/rank-info
